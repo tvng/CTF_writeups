@@ -1,6 +1,6 @@
 # Hidden in plainsight
 * Difficulty : easy
-* Tag : Forensic
+* Tag : Forensics
 * Author : Yahaya Meddy
 
 This challenge is about finding a flag within a JPG named `img.jpg`. Being marked as "easy", the flag shouldn't be hidden too deep. Let's start with some fundamental checks !
@@ -9,13 +9,13 @@ For this challenge I used PicoCTF's webshell.
 
 ## First inspection
 
-I started with the Linux command `file` as a basic inspection to verify the actual type of file.
+I started with the Linux command `file` as a basic inspection to verify the actual type of the file.
 
     file img.jpg
 
 Which gives us :
 
-    img.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "c3RlZ2hpZGU6Y0VGNmVuZHZjbVE9", baseline, precision 8, 640x640, components 3
+> img.jpg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, comment: "c3RlZ2hpZGU6Y0VGNmVuZHZjbVE9", baseline, precision 8, 640x640, components 3
 
 The file is a proper JPG. 
 

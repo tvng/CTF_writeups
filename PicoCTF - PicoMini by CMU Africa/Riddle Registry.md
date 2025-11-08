@@ -1,6 +1,6 @@
 # Riddle Registry
 * Difficulty : easy
-* Tag : Forensic
+* Tag : Forensics
 * Author : Prince Niyonshuti N.
 
 This challenge is about finding a flag within a PDF named `confidential.pdf`. Being marked as "easy", the flag shouldn't be hidden too deep. Let's start with some fundamental checks !
@@ -9,14 +9,14 @@ For this challenge I used PicoCTF's webshell.
 
 ## First inspection
 
-I started with the Linux command `file` as a basic inspection to verify the actual type of file.
+I started with the Linux command `file` as a basic inspection to verify the actual type of the file.
 
 
     file confidential.pdf
 
 Which gives us
 
-    confidential.pdf: PDF document, version 1.7, 1 pages
+> confidential.pdf: PDF document, version 1.7, 1 pages
 
 The PDF is truly a PDF. So the clue is not here. I also tried to open the PDF and copy/paste the censored text but no flag here.
 
@@ -47,10 +47,12 @@ Doesn't the 'Author' field seem off ? Why would an author be named with so many 
 
 I can smell Base64 ! 
 
+## Base64
+
 Base64 use the character `=` as a padding when encoding a sequence, so we may find 0, 1 or 2 '=' signs at the end of Base64 strings. To decode, I used the command :
 
     base64 -d <<< cGljb0NURntwdXp6bDNkX20zdGFkYXRhX2YwdW5kIV9jYTc2YmJiMn0=
 
-Which gives us the flag (that I won't disclode here).
+Which gives us the flag (that I won't disclose here).
 
 And voilà ! Thank you for reading ! 🤓
